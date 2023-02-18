@@ -65,8 +65,7 @@ public class Gmail extends Email {
             this.inboxSize--;
             trash.add(m);
             this.trashSize++;
-            System.out.println("Mail Moved to Trash!");
-        }
+            }
 
     }
 
@@ -123,7 +122,7 @@ public class Gmail extends Email {
 
         if (trash.isEmpty()){
             this.trashSize=0;
-            System.out.println("Trash is Empty");
+
         }
     }
 

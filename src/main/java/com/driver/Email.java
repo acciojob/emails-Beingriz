@@ -33,9 +33,6 @@ public class Email {
         if(getPassword().equals(oldPassword)){
             if(isLength(newPassword) && isDigit(newPassword) && isUpperCase(newPassword) && isLowerCase(newPassword) && isSpecial(newPassword)){
                 this.setPassword(newPassword);
-                System.out.println("New Password has been Changed");
-            }else {
-                System.out.println("Unable to Change Password");
             }
         }
     }
