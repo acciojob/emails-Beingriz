@@ -32,7 +32,7 @@ public class Email {
 
         if(getPassword().equals(oldPassword)){
             if(isLength(newPassword) && isDigit(newPassword) && isUpperCase(newPassword) && isLowerCase(newPassword) && isSpecial(newPassword)){
-                setPassword(newPassword);
+                this.setPassword(newPassword);
                 System.out.println("New Password has been Changed");
             }else {
                 System.out.println("Unable to Change Password");
@@ -41,7 +41,7 @@ public class Email {
     }
     public boolean isLength(String password){
         int len = password.length();
-        if(len >= 8) return true;
+        if(len > 8) return true;
 
         return false;
     }
