@@ -15,7 +15,11 @@ public class Email {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void changePassword(String oldPassword, String newPassword){
@@ -25,5 +29,49 @@ public class Email {
         // 3. It contains at least one lowercase letter
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
+
+        if(getPassword().equals(oldPassword)){
+            if(isLength(newPassword) && isDigit(newPassword) && isUpperCase(newPassword) && isLowerCase(newPassword) && isSpecial(newPassword)){
+                setPassword(newPassword);
+                System.out.println("New Password has been Changed");
+            }else {
+                System.out.println("Unable to Change Password");
+            }
+        }
+    }
+    public boolean isLength(String password){
+        int len = password.length();
+        if(len >= 8) return true;
+
+        return false;
+    }
+
+    public boolean isUpperCase(String password){
+        for (char ch: password.toCharArray()) {
+            if(Character.isUpperCase(ch)) return true;
+        }
+        return  false;
+    }
+
+    public boolean isLowerCase(String password){
+        for (char ch: password.toCharArray()) {
+            if(Character.isLowerCase(ch))
+                return true;
+        }
+        return  false;
+    }
+
+    public  boolean isDigit(String password){
+        for (char ch: password.toCharArray()) {
+            if(Character.isDigit(ch)) return true;
+        }
+        return false;
+    }
+
+    public  boolean isSpecial(String password){
+        for (char ch: password.toCharArray()) {
+            if(!Character.isLetterOrDigit(ch)) return  true;
+        }
+        return false;
     }
 }
